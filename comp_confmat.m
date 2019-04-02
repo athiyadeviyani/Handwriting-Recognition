@@ -8,24 +8,20 @@ function [CM, acc] = comp_confmat(Ytrues, Ypreds, K)
     
     % Initalise CM
     CM = zeros(K,K);
-    
-    % get sizes
+   
     [N, ~] = size(Ytrues);
     
-    % populate the confusion matrix by iterating through N
-    for i=1:N
-        CM(Ytrues(i), Ypreds(i)) = CM(Ytrues(i), Ypreds(i)) + 1;
+    % populate the confusion matrix by iterating through K 
+    for k=1:K
+       preds = Ypreds(Ytrues == k-1);
+       preds = preds';
+       for p = preds
+           tmp = CM(k, p+1) + 1;
+           CM(k, p+1) = tmp;
+       end
     end
     
-    
-    % compute the accuracy
-    total = 0;
-    
-    for i=1:max(unique(Ytrues))
-        total = total + CM(i,i);
-    end
-    
-    acc = total/N;
-    
-    
+    % get the accuracy
+    acc = trace(CM) / N;
+   
 end
