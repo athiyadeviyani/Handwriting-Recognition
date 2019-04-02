@@ -29,4 +29,5 @@ function M = task1_2(X, Y)
     end
     figure
     montage(vectors);
+    save('task1_2_M.mat', 'M');
 end

@@ -1,0 +1,4 @@
+Elapsed time is 1.294402 seconds.
+Number of test samples (N) = 4025
+Number of wrongly classified test samples (Nerrs) = 225.0000
+Accuracy (acc) = 0.9441

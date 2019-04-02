@@ -1,0 +1,26 @@
+Elapsed time is 10.833218 seconds.
+
+Number of nearest neighbors (k) = 1
+Number of test samples (N) = 4025
+Number of wrongly classified test samples (Nerrs) = 136.0000
+Accuracy (acc) = 0.9662
+
+Number of nearest neighbors (k) = 3
+Number of test samples (N) = 4025
+Number of wrongly classified test samples (Nerrs) = 129.0000
+Accuracy (acc) = 0.9680
+
+Number of nearest neighbors (k) = 5
+Number of test samples (N) = 4025
+Number of wrongly classified test samples (Nerrs) = 129.0000
+Accuracy (acc) = 0.9680
+
+Number of nearest neighbors (k) = 10
+Number of test samples (N) = 4025
+Number of wrongly classified test samples (Nerrs) = 148.0000
+Accuracy (acc) = 0.9632
+
+Number of nearest neighbors (k) = 20
+Number of test samples (N) = 4025
+Number of wrongly classified test samples (Nerrs) = 171.0000
+Accuracy (acc) = 0.9575

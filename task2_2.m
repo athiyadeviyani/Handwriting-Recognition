@@ -1,6 +1,6 @@
 %
 %
-function Dmap = task2_2(X, k, MAT_evecs, MAT_evals, posVec, nbins)
+function Dmap = task2_2(Xtrain, Ytrain, k, MAT_evecs, MAT_evals, posVec, nbins)
 % Input:
 %  X   : M-by-D data matrix (double)
 %  k   : scalar (integer) - the number of nearest neighbours
@@ -12,6 +12,54 @@ function Dmap = task2_2(X, k, MAT_evecs, MAT_evals, posVec, nbins)
 %  Dmap  : nbins-by-nbins matrix (uint8) - each element represents
 %	   the cluster number that the point belongs to.
 
+       
+    EVecs = importdata(MAT_evecs);
+    EVals = importdata(MAT_evals);
+
+    
+    % Principal Axes
+    PCA1 = EVecs(:,(1:2));
+    PCA2 = PCA1';
+    
+    
+    % Standard deviations
+    sd1 = sqrt(EVals(1,:));
+    sd2 = sqrt(EVals(2,:));
+    
+    % Compute the mean
+    x = (Xtrain - posVec) * PCA1;
+    
+    means = MyMean(x);
+    
+    mean1 = means(1);
+    mean2 = means(2);
+    
+    % Set the plotting range
+    Xplot = linspace(mean1 - (5 * sd1), mean1 + (5 * sd1), nbins)';
+    Yplot = linspace(mean2 - (5 * sd2), mean2 + (5 * sd2), nbins)';
+    
+    % Initialise Dmap
+    Dmap = zeros(nbins, nbins);
+    
+    [Xv, Yv] = meshgrid(Xplot, Yplot);
+    gridX = [Xv(:), Yv(:)];
+    
+    
+    % Calculate the distances
+    Dmap = run_knn_classifier(x, Ytrain, gridX, k);
+    
+    Dmap = reshape(Dmap, nbins, nbins);
+   
+  
+    
+    % save Dmap
+    filename = strcat('task2_2_dmap_', num2str(k), '.mat');
+    save(filename, 'Dmap');
+    
+    % Draw the decision boundaries
+    figure;
+    contourf(Xplot, Yplot, Dmap, 'edgecolor','none');
+   
 
 
 end
