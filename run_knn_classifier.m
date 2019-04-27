@@ -15,10 +15,13 @@ function [Ypreds] = run_knn_classifier(Xtrain, Ytrain, Xtest, Ks)
     Ypreds = zeros(N, L);
     
     % Compute the square distances between each element in Xtrain and Xtest
-    SqDists = repmat(dot(Xtest, Xtest, 2), 1, M) - (2 * Xtest * Xtrain') + repmat(dot(Xtrain, Xtrain, 2), 1, N)';
+    % bsxfun(@plus, dot(U,U,2), dot(V,V,2)')-2*(U*V');
+    % SqDists = bsxfun(@plus, dot(Xtrain,Xtrain,2), dot(Xtest,Xtest,2)')-2*(Xtrain*Xtest');
+    SqDists = MySqDist(Xtrain, Xtest);
     
+
     % Sort SqDists
-    [~, idx] = sort(SqDists, 2, 'ascend');
+    [~, idx] = sort(SqDists, 1, 'ascend');
     
     % Iterate through all the k in Ks to classify them
     for i = 1:length(Ks)
@@ -26,9 +29,11 @@ function [Ypreds] = run_knn_classifier(Xtrain, Ytrain, Xtest, Ks)
         k = Ks(i);
         
         % Keep the first Knn indexes
-        k_idx = idx(:, 1:k);
-        Ypreds(:,i) = mode(Ytrain(k_idx),2);
-        
+        k_idx = idx(1:k, :);
+        Ypreds(:,i) = mode(Ytrain(k_idx),1);
+        if k==1
+            Ypreds(:,i) = Ytrain(k_idx);
+        end
         
     end
     

@@ -33,7 +33,8 @@ function [C, idx, SSE] = my_kMeansClustering(X, k, initialCentres, maxIter)
       % Pairwise Euclidian Distance Vectorization
       % D = bsxfun(@plus, dot(a,a,2), dot(b,b,2)')-2*(a*b');
       % where a = X and b = C
-      D = bsxfun(@plus, dot(X,X,2), dot(C,C,2)')-2*(X*C');
+      % D = MySqDist(a,b)
+      D = MySqDist(X,C);
      
       
       % Assign data to clusters
@@ -44,7 +45,7 @@ function [C, idx, SSE] = my_kMeansClustering(X, k, initialCentres, maxIter)
       % Compute the sum squared error -> mean of all the distances
       SSE(i) = MyMean(Ds);
       
-      
+      tmp = C;
       % Update cluster centres
       for c = 1:k
           % check the number of samples assigned to this cluster
@@ -53,9 +54,13 @@ function [C, idx, SSE] = my_kMeansClustering(X, k, initialCentres, maxIter)
           end
       end
       
+      if C == tmp
+        break;
+      end
+      
       
   end
-  D = bsxfun(@plus, dot(X,X,2), dot(C,C,2)')-2*(X*C');
+  D = MySqDist(X,C);
   [Ds, idx] = min(D, [], 2);
   SSE(L+1) = (1/N)*sum(Ds);
   

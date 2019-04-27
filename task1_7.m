@@ -20,11 +20,13 @@ function Dmap = task1_7(MAT_ClusterCentres, MAT_M, MAT_evecs, MAT_evals, posVec,
     EVals = importdata(MAT_evals);
     Centres = importdata(MAT_ClusterCentres);
     
+    [D, D] = size(EVecs);
+    
     % Principal Axes
     PCA1 = EVecs(:,(1:2));
     PCA2 = PCA1';
     
-    PC_Centres = (Centres - posVec) * PCA1;
+    %PC_Centres = (Centres - posVec) * PCA1;
     
     % Standard deviations
     sd1 = sqrt(EVals(1,:));
@@ -44,8 +46,14 @@ function Dmap = task1_7(MAT_ClusterCentres, MAT_M, MAT_evecs, MAT_evals, posVec,
     [Xv, Yv] = meshgrid(Xplot, Yplot);
     gridX = [Xv(:), Yv(:)];
     
+    % Convert gridX to a length of 784
+    newGridX = zeros(length(gridX), D);
+    newGridX(:,(1:2)) = gridX;
+    newGridX = newGridX / EVecs + posVec;
+    
     % Calculate the distances
-    Ds = bsxfun(@plus, dot(gridX, gridX, 2), dot(PC_Centres, PC_Centres,2)') - 2*(gridX * PC_Centres');
+    % Ds = bsxfun(@plus, dot(newGridX, newGridX, 2), dot(Centres, Centres,2)') - 2*(newGridX * Centres');
+    Ds = MySqDist(newGridX, Centres);
     [d, I] = min(Ds, [], 2);
     Dmap = reshape(I, nbins, nbins);
     

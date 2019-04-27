@@ -12,7 +12,8 @@ function [Ypreds, MMs, MCovs] = run_mgcs(Xtrain, Ytrain, Xtest, epsilon, L)
 
     K = max(Ytrain) + 1;
     
-    [N,D] = size(Xtest);
+    [M, D] = size(Xtrain);
+    [N, D] = size(Xtest);
     
     % Initalise the output matrices
     Ypreds = zeros(N,1);
@@ -24,29 +25,30 @@ function [Ypreds, MMs, MCovs] = run_mgcs(Xtrain, Ytrain, Xtest, epsilon, L)
     
     % Iterate through each class
     for k=1:K
-        k_training_samples = Xtrain(Ytrain == k-1, :);
-        [C, idx, SSE] = my_kMeansClustering(k_training_samples, k, k_training_samples(1:L,:));
+        class_vec = Xtrain(Ytrain == k-1, :);
+        [C, idx, SSE] = my_kMeansClustering(class_vec, L, class_vec(1:L,:));
+        prior = log(length(find(Ytrain == k-1))) / M;
+        
         for l=1:L % iterate through each cluster
-            sample = k_training_samples(idx==l);
+            cluster_vec = class_vec(idx==l, :);
             
             % compute the mean
-            mean_vec = MyMean(sample);
-            MMs(l*k,:) = mean_vec;
+            mean_vec = MyMean(cluster_vec);
+            MMs((k-1)*L + l,:) = mean_vec;
             
             % compute and regularise the covariance
-            covariances = MyCov(sample);
+            covariances = MyCov(cluster_vec);
             I = eye(D);
             regularised = covariances + epsilon*I;
-            regularised = reshape(regularised, 1, D, D);
-            MCovs(l*k, :, :) = regularised;
+            MCovs((k-1)*L + l, :, :) = regularised;
             
             % compute the log likelihood
             lik_k = gaussianMV(mean_vec, regularised, Xtest);
-            prior = length(find(idx==l))/length(Xtrain);
-            pp(N, k, l) = lik_k + log(prior);
+            pp(:, k, l) = lik_k + log(prior);
         end
     end
-    [~, Ypreds] = max(pp, [], K);
+    class_pp = max(pp, [], 3);
+    [~, Ypreds] = max(class_pp, [], 2);
     Ypreds = Ypreds - 1;
     
 end

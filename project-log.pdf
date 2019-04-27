@@ -1,0 +1,220 @@
+1 CLUSTER CENTRE
+ranges: 1 - 1
+SSE: 52.7259
+ranges: 2 - 2
+SSE: 52.7259
+ranges: 3 - 3
+SSE: 52.7259
+ranges: 4 - 4
+SSE: 52.7259
+ranges: 5 - 5
+SSE: 52.7259
+ranges: 6 - 6
+SSE: 52.7259
+ranges: 7 - 7
+SSE: 52.7259
+ranges: 8 - 8
+SSE: 52.7259
+ranges: 9 - 9
+SSE: 52.7259
+ranges: 10 - 10
+SSE: 52.7259
+---------------------------------------
+2 CLUSTER CENTRES
+ranges: 1 - 2
+SSE: 49.3376
+ranges: 2 - 3
+SSE: 49.3376
+ranges: 3 - 4
+SSE: 49.3376
+ranges: 4 - 5
+SSE: 49.3376
+ranges: 5 - 6
+SSE: 49.3376
+ranges: 6 - 7
+SSE: 49.3376
+ranges: 7 - 8
+SSE: 49.3376
+ranges: 8 - 9
+SSE: 49.3376
+ranges: 9 - 10
+SSE: 49.3376
+ranges: 10 - 11
+SSE: 49.3376
+---------------------------------------
+3 CLUSTER CENTRES
+ranges: 1 - 3
+SSE: 46.9387
+ranges: 2 - 4
+SSE: 46.9387
+ranges: 3 - 5
+SSE: 46.9387
+ranges: 4 - 6
+SSE: 46.9387
+ranges: 5 - 7
+SSE: 46.9387
+ranges: 6 - 8
+SSE: 46.9387
+ranges: 7 - 9
+SSE: 47.4143
+ranges: 8 - 10
+SSE: 47.4143
+ranges: 9 - 11
+SSE: 47.4143
+ranges: 10 - 12
+SSE: 46.9387
+---------------------------------------
+4 CLUSTER CENTRES
+ranges: 1 - 4
+SSE: 45.1063
+ranges: 2 - 5
+SSE: 45.1677
+ranges: 3 - 6
+SSE: 45.1063
+ranges: 4 - 7
+SSE: 45.1063
+ranges: 5 - 8
+SSE: 45.1677
+ranges: 6 - 9
+SSE: 45.1063
+ranges: 7 - 10
+SSE: 45.1063
+ranges: 8 - 11
+SSE: 45.1063
+ranges: 9 - 12
+SSE: 45.1728
+ranges: 10 - 13
+SSE: 45.1728
+---------------------------------------
+5 CLUSTER CENTRES
+ranges: 1 - 5
+SSE: 43.4136
+ranges: 2 - 6
+SSE: 43.4136
+ranges: 3 - 7
+SSE: 43.4136
+ranges: 4 - 8
+SSE: 43.9375
+ranges: 5 - 9
+SSE: 43.4136
+ranges: 6 - 10
+SSE: 43.4136
+ranges: 7 - 11
+SSE: 43.4136
+ranges: 8 - 12
+SSE: 43.4136
+ranges: 9 - 13
+SSE: 43.4136
+ranges: 10 - 14
+SSE: 43.4136
+---------------------------------------
+6 CLUSTER CENTRES
+ranges: 1 - 6
+SSE: 42.2072
+ranges: 2 - 7
+SSE: 42.2072
+ranges: 3 - 8
+SSE: 42.2072
+ranges: 4 - 9
+SSE: 42.2072
+ranges: 5 - 10
+SSE: 42.2072
+ranges: 6 - 11
+SSE: 42.2072
+ranges: 7 - 12
+SSE: 42.2072
+ranges: 8 - 13
+SSE: 42.2072
+ranges: 9 - 14
+SSE: 42.2072
+ranges: 10 - 15
+SSE: 42.2072
+---------------------------------------
+7 CLUSTER CENTRES
+ranges: 1 - 7
+SSE: 41.3203
+ranges: 2 - 8
+SSE: 41.3708
+ranges: 3 - 9
+SSE: 41.3202
+ranges: 4 - 10
+SSE: 41.3202
+ranges: 5 - 11
+SSE: 41.3202
+ranges: 6 - 12
+SSE: 41.3202
+ranges: 7 - 13
+SSE: 41.3708
+ranges: 8 - 14
+SSE: 41.3202
+ranges: 9 - 15
+SSE: 41.3707
+ranges: 10 - 16
+SSE: 41.3202
+---------------------------------------
+8 CLUSTER CENTRES
+ranges: 1 - 8
+SSE: 40.5440
+ranges: 2 - 9
+SSE: 40.7921
+ranges: 3 - 10
+SSE: 40.5440
+ranges: 4 - 11
+SSE: 40.7181
+ranges: 5 - 12
+SSE: 40.7181
+ranges: 6 - 13
+SSE: 40.5440
+ranges: 7 - 14
+SSE: 40.7076
+ranges: 8 - 15
+SSE: 40.7076
+ranges: 9 - 16
+SSE: 40.7076
+ranges: 10 - 17
+SSE: 40.7041
+---------------------------------------
+9 CLUSTER CENTRES
+ranges: 1 - 9
+SSE: 40.0562
+ranges: 2 - 10
+SSE: 40.0158
+ranges: 3 - 11
+SSE: 39.9329
+ranges: 4 - 12
+SSE: 39.9974
+ranges: 5 - 13
+SSE: 39.8095
+ranges: 6 - 14
+SSE: 39.9888
+ranges: 7 - 15
+SSE: 39.8095
+ranges: 8 - 16
+SSE: 39.9880
+ranges: 9 - 17
+SSE: 39.9302
+ranges: 10 - 18
+SSE: 39.9589
+---------------------------------------
+10 CLUSTER CENTRES
+ranges: 1 - 10
+SSE: 39.2899
+ranges: 2 - 11
+SSE: 39.2160
+ranges: 3 - 12
+SSE: 39.4527
+ranges: 4 - 13
+SSE: 39.2163
+ranges: 5 - 14
+SSE: 39.2161
+ranges: 6 - 15
+SSE: 39.1937
+ranges: 7 - 16
+SSE: 39.1937
+ranges: 8 - 17
+SSE: 39.1937
+ranges: 9 - 18
+SSE: 39.1937
+ranges: 10 - 19
+SSE: 39.1937
+---------------------------------------

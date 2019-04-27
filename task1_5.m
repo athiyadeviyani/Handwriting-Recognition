@@ -18,13 +18,13 @@ function task1_5(X, Ks)
         save(strcat('task1_5_sse_', num2str(k), '.mat'), 'SSE');
         
         % Plot graph for each k
-        figure;
-        plot(SSE);
-        hold on;
-        grid on;
-        xlabel('Iteration number');
-        ylabel('SSE');
-        title(strcat('SSE for k=', num2str(k)));
+        %figure;
+        %plot(SSE);
+        %hold on;
+        %grid on;
+        %xlabel('Iteration number');
+        %ylabel('SSE');
+        %title(strcat('SSE for k=', num2str(k)));
         
     end
     

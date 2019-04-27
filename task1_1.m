@@ -24,10 +24,10 @@ function task1_1(X, Y)
         montage(vectors);
         
         % Script to save the montage
-        MyMontage = getframe(gca);
-        classno = k+1;
-        filename = strcat('task1_1_imgs_class',num2str(classno)); 
-        imwrite(MyMontage.cdata,filename,'jpg');
+        %MyMontage = getframe(gca);
+        %classno = k+1;
+        %filename = strcat('task1_1_imgs_class',num2str(classno)); 
+        %imwrite(MyMontage.cdata,filename,'jpg');
     end
 end
 

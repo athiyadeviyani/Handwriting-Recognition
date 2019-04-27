@@ -5,8 +5,10 @@ function task1_6(MAT_ClusterCentres)
 %  MAT_ClusterCentres : file name of the MAT file that contains cluster centres C.
 %       
 % 
-    load(MAT_ClusterCentres);
-    [row, col] = size(C);
+
+    % Gets the cluster centres
+    C = importdata(MAT_ClusterCentres);
+    [row, ~] = size(C);
     vectors = zeros(28, 28, row);
     
     for i=1:row
